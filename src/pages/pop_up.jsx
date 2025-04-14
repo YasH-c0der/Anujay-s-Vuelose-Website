@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/images/expedia.webp";
-import cross from "../assets/images/cross.svg";
+import cross from "../assets/images/cross_2.svg";
 import { NavLink } from "react-router-dom";
 // import '../styles/style.css'; // Adjust the path based on the actual location of style.css
 
@@ -126,18 +126,24 @@ function pop_up() {
     margin-top: 20px;
     }
     .cross{
-    display: none;
+    display: flex;
+    height: 40px;
+    justify-content: right;
+    }
+    .cross img{
+    height: 100%;
+    width: 40px;
     }
     @media(max-width: 500px){
         .cross{
         display: flex;
-        height: 30px;
+        height: 25px;
         width: 100%;
         justify-content: right;
         }
         .cross img{
           height: 100%;
-          width: 30px;
+          width: 25px;
           }
         }
   
