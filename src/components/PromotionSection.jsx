@@ -37,7 +37,7 @@ const PromotionSection = () => {
                     <h2 className="mb-3">25% EXTRA DISCOUNT</h2>
                     <button
                       className="btn btn-warning"
-                      onClick={() => window.location.href='tel:+1 (800) 231-6694'}
+                      onClick={() => window.location.href='tel:+1 (888) 394-9616'}
                     >
                       Call Now
                     </button>
@@ -72,7 +72,7 @@ const PromotionSection = () => {
                     <h4 className="mb-3">SPECIAL OFFER</h4>
                     <button
                       className="btn btn-warning"
-                      onClick={() => window.location.href='tel:+1 (800) 231-6694'}
+                      onClick={() => window.location.href='tel:+1 (888) 394-9616'}
                     >
                       Call Now
                     </button>

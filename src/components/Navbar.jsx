@@ -17,7 +17,7 @@ const Navbar = () => {
             <img src={logo} alt="Vuelose" height="60" />
           </Link>
           <div className="display3 d-lg-none">
-            <a href="tel:+1 (800) 231-6694" style={{ color: '#1d1d21', textDecoration: 'none' }}>+1 (800) 231-6694</a>
+            <a href="tel:+1 (888) 394-9616" style={{ color: '#1d1d21', textDecoration: 'none' }}>+1 (888) 394-9616</a>
           </div>
           <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
           <BootstrapNavbar.Collapse id="basic-navbar-nav" className="flex-grow-1 text-right">
@@ -42,8 +42,8 @@ const Navbar = () => {
                   <div>
                     <h5 className="m-0 p-0 text-start" style={{ color: '#1d1d21' }}>
                       <p className="m-0">Toll-free number</p>
-                      <a href="tel:+1 (800) 231-6694" className="text-decoration-none" style={{ color: '#1d1d21' }}>
-                        +1 (888) 394-9616
+                      <a href="tel:+1 (888) 394-9616" className="text-decoration-none" style={{ color: '#1d1d21' }}>
+                      +1 (888) 394-9616
                       </a>
                     </h5>
                   </div>

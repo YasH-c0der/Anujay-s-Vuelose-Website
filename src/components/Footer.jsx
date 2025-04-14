@@ -34,7 +34,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="me-3">
-                  <a href="tel:+1 (800) 231-6694">
+                  <a href="tel:+1 (888) 394-9616">
                     <FaPhone className="me-2" /> +1 (888) 394-9616
                   </a>
                 </li>
@@ -117,7 +117,7 @@ const Footer = () => {
               <div>
                 <h5 className="m-1 p-0 text-start">
                   <p className="mb-0">Toll-free number</p>
-                  <a href="tel:+1 (800) 231-6694">+1 (800) 231-6694</a>
+                  <a href="tel:+1 (888) 394-9616">+1 (888) 394-9616</a>
                 </h5>
               </div>
             </li>
