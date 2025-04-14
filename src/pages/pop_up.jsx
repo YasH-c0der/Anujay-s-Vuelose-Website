@@ -1,8 +1,16 @@
 import React from "react";
 import logo from "../assets/images/expedia.webp";
+import cross from "../assets/images/cross.svg";
+import { NavLink } from "react-router-dom";
 // import '../styles/style.css'; // Adjust the path based on the actual location of style.css
 
 function pop_up() {
+  // const handRedirect = ()=>{
+  //   window.location.href = "/home";
+  // }
+  function handleRedirect(){
+    window.location.href = "/home";
+  }
   return (
     <>
       <style>
@@ -117,10 +125,31 @@ function pop_up() {
     font-size: 1.7rem; 
     margin-top: 20px;
     }
+    .cross{
+    display: none;
+    }
+    @media(max-width: 500px){
+        .cross{
+        display: flex;
+        height: 30px;
+        width: 100%;
+        justify-content: right;
+        }
+        .cross img{
+          height: 100%;
+          width: 30px;
+          }
+        }
   
         `}
       </style>
-      <div class="container-2">
+      <div className="container-2">
+        <div className="cross">
+          <NavLink to="/home">
+          <img src={cross}
+          alt="" /></NavLink>
+          
+        </div>
         <img src={logo} class="logo" alt="Expedia Logo" />
 
         <h2 class="promo-text">EXCLUSIVE TRAVEL OFFER – SAVE 25%!</h2>
