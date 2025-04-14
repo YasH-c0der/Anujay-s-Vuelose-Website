@@ -1,0 +1,258 @@
+/* Global Styles */
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure containers can expand to full width */
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm,
+.container {
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #3f4e63;
+}
+
+a:hover {
+  color: #642fdf;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+.text-danger {
+  color: #dc9e3e !important;
+}
+
+/* Header Styles */
+.navbar {
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.navbar .container {
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.phone-number p {
+  font-size: 12px;
+  margin-bottom: 0;
+  color: #666;
+}
+
+.phone-number a {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Hero Section Styles */
+.banner-bg {
+  position: relative;
+  color: white;
+  width: 100%;
+}
+
+.banner-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.marg-top {
+  margin-top: 60px;
+  z-index: 10;
+  position: relative;
+}
+
+.parent_lable label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Destinations Section Styles */
+.tours_section {
+  padding: 60px 0;
+  width: 100%;
+}
+
+.img-box {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.img-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card2 {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  padding: 5px 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+}
+
+.card-title {
+  color: white;
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+/* About Section Styles */
+.travel-sec {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
+/* Footer Styles */
+.footer-bg {
+  background-color: #4a5277;
+  color: #fff;
+  padding: 50px 0 30px;
+  width: 100%;
+}
+
+.footer-bg h6 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer-bg ul li {
+  margin-bottom: 10px;
+}
+
+.footer-bg a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bg a:hover {
+  color: #dc9e3e;
+}
+
+.top-margin {
+  margin-top: 20px;
+}
+
+.footer-bottom {
+  background-color: #3f4263;
+  color: #fff;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.footer-border {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+/* Inner Pages Styles */
+.title-bg {
+  background-color: #4a5277;
+  color: white;
+  padding: 50px 0;
+  width: 100%;
+}
+
+.title-bg h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.title-bg ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.title-bg ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  .container, .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .marg-top {
+    margin-top: 30px;
+  }
+
+  .marg-top h1 {
+    font-size: 28px;
+  }
+
+  .parent_lable {
+    padding: 15px;
+  }
+
+  .title-bg h2 {
+    font-size: 28px;
+  }
+}
+
+/* Fix for Bootstrap form fields */
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(100, 47, 223, 0.25);
+  border-color: #642fdf;
+}
+
+.btn-primary {
+  background-color: #642fdf;
+  border-color: #642fdf;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #5024c2;
+  border-color: #5024c2;
+}
+
+/* Mobile Fixed Bottom Phone */
+.fixed-bottom {
+  background-color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  width: 100%;
+}
+
+/* App container */
+.App {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
