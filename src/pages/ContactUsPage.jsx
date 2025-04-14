@@ -59,7 +59,7 @@ const ContactUsPage = () => {
                     <h6 className="title">Contact Number</h6>
                     <p className="mb-0">
                       <a href="tel:+1 (800) 231-6694" className="text-decoration-none">
-                        <FaPhone className="me-2" /> +1 (800) 394-9616
+                        <FaPhone className="me-2" /> +1 (888) 394-9616
                       </a>
                     </p>
                   </div>

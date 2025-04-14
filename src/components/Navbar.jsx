@@ -43,7 +43,7 @@ const Navbar = () => {
                     <h5 className="m-0 p-0 text-start" style={{ color: '#1d1d21' }}>
                       <p className="m-0">Toll-free number</p>
                       <a href="tel:+1 (800) 231-6694" className="text-decoration-none" style={{ color: '#1d1d21' }}>
-                        +1 (800) 394-9616
+                        +1 (888) 394-9616
                       </a>
                     </h5>
                   </div>

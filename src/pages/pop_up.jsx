@@ -126,7 +126,7 @@ function pop_up() {
         <h2 class="promo-text">EXCLUSIVE TRAVEL OFFER – SAVE 25%!</h2>
 
         <div class="call-button primary">
-          <span class="phone-icon">📞</span> +1 (800) 394-9616
+          <span class="phone-icon">📞</span> +1 (888) 394-9616
         </div>
 
         <p class="support-text">24x7 RESERVATION SUPPORT</p>
