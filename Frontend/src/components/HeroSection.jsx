@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { FaCalendarAlt, FaUser, FaPlane } from 'react-icons/fa';
 import bgImage from '../assets/images/slider-1.jpg';
+import axios from "axios";
 
 const HeroSection = () => {
   const [tripType, setTripType] = useState('roundTrip');
@@ -13,6 +14,7 @@ const HeroSection = () => {
 
   const handleSubmit = (e) => {
     console.log('Search submitted:', { tripType, fromAirport, toAirport, departureDate, returnDate, travelers });
+    axios.get("/api/").then(res => console.log("Hello"))
   };
 
   return (
@@ -163,7 +165,7 @@ const HeroSection = () => {
 
                   <Col xs={12} sm={6} lg={2} xl={2} className="d-grid gap-2">
                     <Button variant="primary" type="button" onClick={handleSubmit} className="h-75 mt-4">
-                      <a href="/" style={{color:"white"}}>Search Flights</a>
+                      Search Flights
                     </Button>
                   </Col>
                 </Row>
