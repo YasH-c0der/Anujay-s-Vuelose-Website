@@ -1,20 +1,26 @@
-import cookieParser from "cookie-parser"
 import cors from "cors"
+import cookieParser from "cookie-parser"
+import flightRouter from "./src/routes/flights.routes.js"
+import dotenv from "dotenv";
+import express from "express"
 
+dotenv.config({
+    path: "./.env",
+});
 
-require('dotenv').config()
-const express = require("express")
 const app = express()
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true, limit: "16kb"}))
+app.use(express.static("public"))
+app.use(cookieParser())
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
     credentials: true
 }))
 
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true, limit: "16kb"}))
-app.use(express.static("public"))
-app.use(cookieParser())
+app.use("/api/flights", flightRouter)
 
 app.get("/api/", (req,res) => {
     console.log("Hello World!!");
