@@ -1,0 +1,106 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.f_card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 15px;
+  max-width: 50%;
+  align-items: center;
+  margin: 50px auto;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.f_card hr{
+  margin: 0px;
+}
+
+.f_airline {
+  display: flex;
+  align-self: flex-start;
+}
+
+.f_airline div {
+  align-self: left;
+  margin: 4px;
+  font-size: 12px;
+}
+
+.f_flight_details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0px;
+}
+
+.f_arrival {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.f_date div {
+  font-size: 10px;
+  color: #383c42;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+}
+
+.f_time div {
+  font-size: 18px;
+  line-height: 22.5px;
+  font-weight: 550;
+  color: #383c42;
+  font-family: "Mukta", sans-serif;
+  letter-spacing: -0.8px;
+}
+
+.f_city div {
+  font-size: 14px !important;
+  color: #383c42;
+  font-weight: 700 !important;
+  line-height: 125%;
+  /* font-family: Nunito; */
+}
+
+.f_duration_line1 {
+  display: flex;
+}
+
+.f_flight1_img {
+  content: url("../images/flight.svg");
+}
+
+.f_duration_time {
+  background-color: #f5f5f5;
+  padding: 4px 16px;
+  white-space: pre;
+  font-size: 12px !important;
+  color: #383c42;
+  font-weight: 400;
+  font-family: Nunito;
+  margin: 0px 10px;
+}
+
+.f_flight1_img_dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #282c2e;
+}
+.f_flight2_img_dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #282c2e;
+}
+
+.f_flight2_img {
+  content: url("../images/flight2.svg");
+}

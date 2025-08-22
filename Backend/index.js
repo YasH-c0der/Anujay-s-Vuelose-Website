@@ -20,9 +20,9 @@ app.use(cors({
     credentials: true
 }))
 
-app.use("/api/flights", flightRouter)
+app.use("/api/v1/flights", flightRouter)
 
-app.get("/api/", (req,res) => {
+app.get("/api/v1", (req,res) => {
     console.log("Hello World!!");
 })
 

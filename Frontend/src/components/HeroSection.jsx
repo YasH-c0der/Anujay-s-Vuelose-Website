@@ -1,20 +1,53 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { FaCalendarAlt, FaUser, FaPlane } from 'react-icons/fa';
-import bgImage from '../assets/images/slider-1.jpg';
+import React, { useContext, useState } from "react";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { FaCalendarAlt, FaUser, FaPlane } from "react-icons/fa";
+import bgImage from "../assets/images/slider-1.jpg";
 import axios from "axios";
+import FlightContext from "../assets/context/FlightContext";
 
 const HeroSection = () => {
-  const [tripType, setTripType] = useState('roundTrip');
-  const [fromAirport, setFromAirport] = useState('');
-  const [toAirport, setToAirport] = useState('');
-  const [departureDate, setDepartureDate] = useState('');
-  const [returnDate, setReturnDate] = useState('');
-  const [travelers] = useState('Economy - Adults: 1 - Children: 0');
+  const [tripType, setTripType] = useState("roundTrip");
+  const [depCity, setFromAirport] = useState("");
+  const [arrCity, setToAirport] = useState("");
+  const [departureDate, setDepartureDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
+  const [travelers] = useState("Economy - Adults: 1 - Children: 0");
+  const [loading, setLoading] = useState(null);
+  const {setflight_data} = useContext(FlightContext)
 
   const handleSubmit = (e) => {
-    console.log('Search submitted:', { tripType, fromAirport, toAirport, departureDate, returnDate, travelers });
-    axios.get("/api/").then(res => console.log("Hello"))
+    try {
+
+      
+      setLoading(true);
+      console.log("Search submitted:", {
+        tripType,
+        depCity,
+        arrCity,
+        departureDate,
+        returnDate,
+        travelers,
+      });
+
+      axios
+        .post("/api/v1/flights/info", {
+          depCity,
+          arrCity,
+        })
+        .then(function (response) {
+          console.log(response.data);
+          setflight_data(response.data.data)
+        })
+        .catch((err) => {
+          console.error("Error message:", err.message);
+          console.error("Response:", err.response?.data);
+          console.error("Status:", err.response?.status);
+        });
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -22,22 +55,28 @@ const HeroSection = () => {
       className="container-fluid banner-bg p-0"
       style={{
         backgroundImage: `url(${bgImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        minHeight: '500px',
-        position: 'relative'
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "500px",
+        position: "relative",
       }}
     >
-      <div className="overlay" style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'rgba(0, 0, 0, 0.3)'
-      }}></div>
+      <div
+        className="overlay"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.3)",
+        }}
+      ></div>
 
-      <Container className="searh-engain position-relative" style={{ paddingTop: '80px', zIndex: 2 }}>
+      <Container
+        className="searh-engain position-relative"
+        style={{ paddingTop: "80px", zIndex: 2 }}
+      >
         <Row>
           <Col xs={12} sm={12} lg={12} xl={12}>
             <div className="marg-top text-white">
@@ -55,8 +94,8 @@ const HeroSection = () => {
                     id="roundTrip"
                     label="Round Trip"
                     name="tripType"
-                    checked={tripType === 'roundTrip'}
-                    onChange={() => setTripType('roundTrip')}
+                    checked={tripType === "roundTrip"}
+                    onChange={() => setTripType("roundTrip")}
                     className="text-light"
                   />
                 </div>
@@ -66,8 +105,8 @@ const HeroSection = () => {
                     id="oneWay"
                     label="One Way"
                     name="tripType"
-                    checked={tripType === 'oneWay'}
-                    onChange={() => setTripType('oneWay')}
+                    checked={tripType === "oneWay"}
+                    onChange={() => setTripType("oneWay")}
                     className="text-light"
                   />
                 </div>
@@ -75,7 +114,9 @@ const HeroSection = () => {
                 <Row className="parent_lable g-2 bg-white p-4 rounded">
                   <Col xs={12} sm={6} lg={2} xl={2}>
                     <Form.Group className="mb-3">
-                      <Form.Label style={{ color: 'black' }}>From Airport</Form.Label>
+                      <Form.Label style={{ color: "black" }}>
+                        From Airport
+                      </Form.Label>
                       <div className="input-group">
                         <span className="input-group-text">
                           <FaPlane />
@@ -83,7 +124,7 @@ const HeroSection = () => {
                         <Form.Control
                           type="text"
                           placeholder="Flying From"
-                          value={fromAirport}
+                          value={depCity}
                           onChange={(e) => setFromAirport(e.target.value)}
                         />
                       </div>
@@ -92,7 +133,9 @@ const HeroSection = () => {
 
                   <Col xs={12} sm={6} lg={2} xl={2}>
                     <Form.Group className="mb-3">
-                      <Form.Label style={{ color: 'black' }}>To Airport</Form.Label>
+                      <Form.Label style={{ color: "black" }}>
+                        To Airport
+                      </Form.Label>
                       <div className="input-group">
                         <span className="input-group-text">
                           <FaPlane />
@@ -100,7 +143,7 @@ const HeroSection = () => {
                         <Form.Control
                           type="text"
                           placeholder="Flying To"
-                          value={toAirport}
+                          value={arrCity}
                           onChange={(e) => setToAirport(e.target.value)}
                         />
                       </div>
@@ -109,7 +152,9 @@ const HeroSection = () => {
 
                   <Col xs={12} sm={6} lg={2} xl={2}>
                     <Form.Group className="mb-3">
-                      <Form.Label style={{ color: 'black' }}>Departure Date</Form.Label>
+                      <Form.Label style={{ color: "black" }}>
+                        Departure Date
+                      </Form.Label>
                       <div className="input-group">
                         <span className="input-group-text">
                           <FaCalendarAlt />
@@ -126,7 +171,9 @@ const HeroSection = () => {
 
                   <Col xs={12} sm={6} lg={2} xl={2}>
                     <Form.Group className="mb-3">
-                      <Form.Label style={{ color: 'black' }}>Return Date</Form.Label>
+                      <Form.Label style={{ color: "black" }}>
+                        Return Date
+                      </Form.Label>
                       <div className="input-group">
                         <span className="input-group-text">
                           <FaCalendarAlt />
@@ -136,7 +183,7 @@ const HeroSection = () => {
                           placeholder="MM/DD/YYYY"
                           value={returnDate}
                           onChange={(e) => setReturnDate(e.target.value)}
-                          disabled={tripType === 'oneWay'}
+                          disabled={tripType === "oneWay"}
                         />
                       </div>
                     </Form.Group>
@@ -144,7 +191,9 @@ const HeroSection = () => {
 
                   <Col xs={12} sm={6} lg={2} xl={2}>
                     <Form.Group className="mb-3">
-                      <Form.Label style={{ color: 'black' }}>Add Travelers</Form.Label>
+                      <Form.Label style={{ color: "black" }}>
+                        Add Travelers
+                      </Form.Label>
                       <div className="dropdown">
                         <div className="class-selection-container">
                           <div className="input-group">
@@ -155,7 +204,9 @@ const HeroSection = () => {
                               type="text"
                               readOnly
                               value={travelers}
-                              onClick={() => console.log('Open travelers dropdown')}
+                              onClick={() =>
+                                console.log("Open travelers dropdown")
+                              }
                             />
                           </div>
                         </div>
@@ -164,7 +215,13 @@ const HeroSection = () => {
                   </Col>
 
                   <Col xs={12} sm={6} lg={2} xl={2} className="d-grid gap-2">
-                    <Button variant="primary" type="button" onClick={handleSubmit} className="h-75 mt-4">
+                    <Button
+                      variant="primary"
+                      type="button"
+                      onClick={handleSubmit}
+                      // href="/flight-info"
+                      className="h-75 mt-4"
+                    >
                       Search Flights
                     </Button>
                   </Col>

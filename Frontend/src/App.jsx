@@ -12,9 +12,15 @@ import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import PopUp from './pages/pop_up';
+import FlightInfo from './pages/FlightInfo';
+import FlightContext from './assets/context/FlightContext';
+import { useState } from 'react';
 
 function App() {
+
+  const [flight_data, setflight_data] = useState({})
   return (
+    <FlightContext.Provider value={{flight_data, setflight_data}}>
     <Router>
       <div className="App">
         <Navbar />
@@ -25,11 +31,13 @@ function App() {
             <Route path="/about-us" element={<AboutUsPage />} />
             <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/flight-info" element={<FlightInfo />} />
           </Routes>
         </main>
         {/* <Footer /> */}
       </div>
     </Router>
+    </FlightContext.Provider>
   );
 }
 

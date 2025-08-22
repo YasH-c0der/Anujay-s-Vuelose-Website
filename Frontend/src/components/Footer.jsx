@@ -49,19 +49,19 @@ const Footer = () => {
               <div className="payment_icon align-items-center m-auto">
                 <ul className="d-flex list-unstyled">
                   <li className="me-2">
-                    <img src="https://via.placeholder.com/40x25/cccccc/666666?text=VISA" alt="Visa" />
+                    {/* <img src="https://via.placeholder.com/40x25/cccccc/666666?text=VISA" alt="Visa" /> */}
                   </li>
                   <li className="me-2">
-                    <img src="https://via.placeholder.com/40x25/cccccc/666666?text=MC" alt="MasterCard" />
+                    {/* <img src="https://via.placeholder.com/40x25/cccccc/666666?text=MC" alt="MasterCard" /> */}
                   </li>
                   <li className="me-2">
-                    <img src="https://via.placeholder.com/40x25/cccccc/666666?text=AMEX" alt="Amex" />
+                    {/* <img src="https://via.placeholder.com/40x25/cccccc/666666?text=AMEX" alt="Amex" /> */}
                   </li>
                   <li className="me-2">
-                    <img src="https://via.placeholder.com/40x25/cccccc/666666?text=DISC" alt="Discover" />
+                    {/* <img src="https://via.placeholder.com/40x25/cccccc/666666?text=DISC" alt="Discover" /> */}
                   </li>
                   <li className="me-2">
-                    <img src="https://via.placeholder.com/40x25/cccccc/666666?text=PAY" alt="PayPal" />
+                    {/* <img src="https://via.placeholder.com/40x25/cccccc/666666?text=PAY" alt="PayPal" /> */}
                   </li>
                 </ul>
               </div>

@@ -3,6 +3,6 @@ import flightInfo from "../controllers/flights.controller.js";
 
 const router = Router()
 
-router.route("/").get(flightInfo)
+router.route("/info").post(flightInfo)
 
 export default router
