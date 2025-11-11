@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FaCalendarAlt, FaUser, FaPlane } from "react-icons/fa";
 import bgImage from "../assets/images/slider-1.jpg";
@@ -222,7 +223,9 @@ const HeroSection = () => {
                       // href="/flight-info"
                       className="h-75 mt-4"
                     >
+                      <Link className="text-white" to={"/flight-info"}>
                       Search Flights
+                      </Link>
                     </Button>
                   </Col>
                 </Row>

@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import "../assets/css/Flight_card.css"
-import FlightContext from "../assets/context/FlightContext";
 
 
 export default function FlightCard({flight}) {
   
-  const {flight_data} = useContext(FlightContext)
   return (
     <>
       <div className="f_card">
@@ -39,7 +37,7 @@ export default function FlightCard({flight}) {
                 <div className="f_duration_line1">
                     <span className="f_flight1_img"></span>
                     <span className="f_flight1_img_dash"> -------- </span>
-                    <span className="f_duration_time">02:30</span>
+                    <span className="f_duration_time">{JSON.stringify(flight.f_duration)}</span>
                     <span className="f_flight2_img_dash"> -------- </span>
                     <span className="f_flight2_img"></span>
                 </div>
