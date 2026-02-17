@@ -215,18 +215,23 @@ const HeroSection = () => {
                     </Form.Group>
                   </Col>
 
-                  <Col xs={12} sm={6} lg={2} xl={2} className="d-grid gap-2">
-                    <Button
-                      variant="primary"
-                      type="button"
-                      onClick={handleSubmit}
-                      // href="/flight-info"
-                      className="h-75 mt-4"
-                    >
-                      <Link className="text-white" to={"/flight-info"}>
-                      Search Flights
-                      </Link>
-                    </Button>
+                  <Col xs={12} sm={6} lg={2} xl={2}>
+                    <Form.Group className="mb-3">
+                      <Form.Label style={{ visibility: "hidden" }}>
+                        Search
+                      </Form.Label>
+                      <Button
+                        variant="primary"
+                        type="button"
+                        onClick={handleSubmit}
+                        className="w-100"
+                        style={{ height: "38px", display: "flex", alignItems: "center", justifyContent: "center" }}
+                      >
+                        <Link className="text-white text-decoration-none fw-bold" to={"/flight-info"}>
+                          Search Flights
+                        </Link>
+                      </Button>
+                    </Form.Group>
                   </Col>
                 </Row>
               </div>

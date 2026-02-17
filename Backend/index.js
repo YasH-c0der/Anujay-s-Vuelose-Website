@@ -4,6 +4,7 @@ import flightRouter from "./src/routes/flights.routes.js";
 import dotenv from "dotenv";
 import express from "express";
 import connectDB from "./src/db/index.js";
+import userRouter from "./src/routes/user.routes.js";
 
 dotenv.config({
     path: "./.env",
@@ -24,6 +25,7 @@ app.use(
 );
 
 app.use("/api/v1/flights", flightRouter);
+app.use("/api/v1/users", userRouter);
 
 app.get("/api/v1", (req, res) => {
     console.log("Hello World!!");

@@ -1,33 +1,39 @@
-import { Schema } from "mongoose";
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
-const userSchema = new Schema({
-    usernmae: {
-        type: String,
-        required: true,
-        unique: true,
-        lowercase: true,
-        trim: true,
-        index: true,
+const userSchema = new Schema(
+    {
+        username: {
+            type: String,
+            required: true,
+            unique: true,
+            lowercase: true,
+            trim: true,
+            index: true,
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            lowercase: true,
+            trim: true,
+        },
+        fullname: {
+            type: String,
+            required: true,
+            index: true,
+        },
+        password: {
+            type: String,
+            required: [true, "Password is required"],
+        },
+        refreshToken: {
+            type: String,
+        },
     },
-    email: {
-        type: email,
-        required: true,
-        unique: true,
-        lowercase: true,
-        trim: true,
-    },
-    fullname: {
-        type: String,
-        required: true,
-        index: true,
-    },
-    password: {
-        type: password,
-        required: [true, "Password is required"],
-    },
-});
+    { timestamps: true }
+);
 
 userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) return next();
@@ -36,17 +42,17 @@ userSchema.pre("save", async function (next) {
     next();
 });
 
-userSchehma.methods.isPasswordCorrect = async function (password) {
-    return await bcrypt.compare(this.password, password);
+userSchema.methods.isPasswordCorrect = async function (password) {
+    return await bcrypt.compare(password, this.password);
 };
 
-userSchehma.methods.generateAccessToken = async function () {
+userSchema.methods.generateAccessToken = function () {
     return jwt.sign(
         {
             _id: this._id,
             email: this.email,
             username: this.username,
-            fullName: this.fullName,
+            fullName: this.fullname,
         },
         process.env.ACCESS_TOKEN_SECRET,
         {
