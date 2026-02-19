@@ -36,8 +36,8 @@ const LoginPage = () => {
         setError('');
 
         const url = isLogin 
-            ? 'http://localhost:8000/api/v1/users/login' 
-            : 'http://localhost:8000/api/v1/users/register';
+            ? '/api/v1/users/login'
+            : '/api/v1/users/register';
 
         try {
             const payload = isLogin 
