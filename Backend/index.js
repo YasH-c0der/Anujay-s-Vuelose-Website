@@ -34,7 +34,14 @@ app.get("/api/v1", (req, res) => {
 
 
 connectDB().then(() => {
-    app.listen(process.env.PORT, (req, res) => {
-        console.log("Sever started at ", process.env.PORT);
-    });
+    // Only listen in local dev, otherwise Vercel handles it
+    if (process.env.NODE_ENV !== 'production') {
+        const port = process.env.PORT || 8000;
+        app.listen(port, () => {
+            console.log("Server started at ", port);
+        });
+    }
 });
+
+// Export the app for Vercel Serverless Function
+export default app;
